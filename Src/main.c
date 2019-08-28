@@ -45,6 +45,7 @@
 #include "pcf8563/pcf8563.h"
 #include "bh1750/bh1750.h"
 #include "tm1638/tm1638.h"
+#include "hal_dev_ctrl.h"
 
 /* USER CODE BEGIN Includes */
 
@@ -173,7 +174,7 @@ int main(void)
 //	HAL_GPIO_WritePin(TM1638_STB_GPIO_Port,TM1638_STB_Pin,GPIO_PIN_SET);
 //	HAL_UART_Transmit_IT(&huart1 ,(uint8_t*)aTxStartMessages,sizeof(aTxStartMessages)); //sizeof()可读取目标长度
 //	HAL_UART_Receive_IT(&huart1,(uint8_t*)aRxBuffer,10);
-	
+
 	printf ("Hello STM%d!\r\n",d);
 	printf ("Hello STM%dF103!\r\n",d);
   /* USER CODE END 2 */
@@ -186,7 +187,6 @@ int main(void)
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
-//printf ("Hello STM%d!",d);
 	  uint8_t j;
 	  delay(5000);
 	  si7020Measure( &si7020_temperature, &si7020_humidity);
@@ -197,17 +197,6 @@ int main(void)
 	  singleWriteBH1750(0x10);
 	  delay(500);
 	  multipleReadBH1750();
-//	  j++;
-//	  if(j>15)
-//		  j=0;
-//	  writeData(6,tab[j]);
-//	  writeAllLED(1<<1);
-//	  writeData(1,1);
-////	for(j=0;j<8;j++)				//共阳显示全0
-////	{
-////		writeData(j*2,0xff);
-////		writeData(j*2+1,0x03);
-////	}
 	displayNumber[0]=time_buffer[4]/10;
 	displayNumber[1]=time_buffer[4]%10;
 	displayNumber[2]=time_buffer[5]/10;
@@ -220,46 +209,7 @@ int main(void)
 	displayNumber[9]=9;
 	
 	display(displayNumber,(time_buffer[6]%10)&0x01);
-	
-//		writeData(0x00,0xED);
-//		writeData(0x02,0x9F);
-//		writeData(0x04,0xFB);
-//		writeData(0x06,0x6D);
-//		writeData(0x08,0x45);
-//		writeData(0x0A,0x71);
-//		writeData(0x0C,0x7C);
-//		writeData(0x0E,0x00);
-
-//		writeData(0x01,0x03);
-//		writeData(0x03,0x03);
-//		writeData(0x05,0x03);
-//		writeData(0x07,0x03);
-//		writeData(0x09,0x01);
-//		writeData(0x0B,0x03);
-//		writeData(0x0D,0x03);
-//		writeData(0x0F,0x00);
-		
-//		writeData(0x02,0x02);
-//		writeData(0x04,0x02);
-//		writeData(0x06,0x02);
-//		writeData(0x08,0x02);
-//		writeData(0x0A,0x02);
-		
-//		writeData(0x01,0x00|0xc0);
-//		writeData(0x02,0x60|0xc0);
-//		writeData(0x03,0x00|0xc0);
-//		writeData(0x04,0x04|0xc0);
-//		writeData(0x05,0x00|0xc0);
-//		writeData(0x06,0x92|0xc0);
-//		writeData(0x07,0x00|0xc0);
-//		writeData(0x08,0xBA|0xc0);
-//		writeData(0x09,0x02|0xc0);
-//		writeData(0x0A,0x8E|0xc0);
-//		writeData(0x0B,0x00|0xc0);
-//		writeData(0x0C,0x87|0xc0);
-//		writeData(0x0D,0x00|0xc0);
-//		writeData(0x0E,0xFF|0xc0);
-//		writeData(0x0F,0x03|0xc0);
+	task_handle();
   }
   /* USER CODE END 3 */
 

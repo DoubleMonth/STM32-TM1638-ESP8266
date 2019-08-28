@@ -24,3 +24,5 @@ stm32f103c8t6_test\stm32f1xx_hal_cortex.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/s
 stm32f103c8t6_test\stm32f1xx_hal_cortex.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
 stm32f103c8t6_test\stm32f1xx_hal_cortex.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 stm32f103c8t6_test\stm32f1xx_hal_cortex.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+stm32f103c8t6_test\stm32f1xx_hal_cortex.o: ..\Hal\hal_dev_ctrl.h
+stm32f103c8t6_test\stm32f1xx_hal_cortex.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

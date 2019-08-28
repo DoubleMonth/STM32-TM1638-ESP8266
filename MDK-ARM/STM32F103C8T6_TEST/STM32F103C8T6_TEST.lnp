@@ -23,6 +23,7 @@
 "stm32f103c8t6_test\pcf8563.o"
 "stm32f103c8t6_test\bh1750.o"
 "stm32f103c8t6_test\tm1638.o"
+"stm32f103c8t6_test\hal_dev_ctrl.o"
 --library_type=microlib --strict --scatter "STM32F103C8T6_TEST\STM32F103C8T6_TEST.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

@@ -30,3 +30,5 @@ stm32f103c8t6_test\main.o: ..\HardWare\si7020/si7020_iic.h
 stm32f103c8t6_test\main.o: ..\HardWare\pcf8563/pcf8563.h
 stm32f103c8t6_test\main.o: ..\HardWare\bh1750/bh1750.h
 stm32f103c8t6_test\main.o: ..\HardWare\tm1638/tm1638.h
+stm32f103c8t6_test\main.o: ..\Hal\hal_dev_ctrl.h
+stm32f103c8t6_test\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

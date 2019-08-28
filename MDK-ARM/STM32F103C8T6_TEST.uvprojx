@@ -137,7 +137,7 @@
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>BIN\UL2CM3.DLL</Flash2>
-          <Flash3>"" ()</Flash3>
+          <Flash3></Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
           <pFcarmGrp></pFcarmGrp>
@@ -332,7 +332,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xB</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;..\HardWare</IncludePath>
+              <IncludePath>../Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;..\HardWare;..\Hal</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -514,6 +514,16 @@
               <FileName>tm1638.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\HardWare\tm1638\tm1638.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Hal</GroupName>
+          <Files>
+            <File>
+              <FileName>hal_dev_ctrl.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Hal\hal_dev_ctrl.c</FilePath>
             </File>
           </Files>
         </Group>

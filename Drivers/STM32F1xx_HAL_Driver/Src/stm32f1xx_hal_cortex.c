@@ -97,6 +97,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f1xx_hal.h"
+#include "hal_dev_ctrl.h"
 
 /** @addtogroup STM32F1xx_HAL_Driver
   * @{
@@ -494,11 +495,16 @@ void HAL_SYSTICK_IRQHandler(void)
   * @brief  SYSTICK callback.
   * @retval None
   */
+extern volatile uint32_t deltms;
 __weak void HAL_SYSTICK_Callback(void)
 {
   /* NOTE : This function Should not be modified, when the callback is needed,
             the HAL_SYSTICK_Callback could be implemented in the user file
    */
+//	static uint32_t i;
+//	printf("delay %d s",i);
+	deltms++;  //时间轮询使用
+	notify(EV_TICK); //使能
 }
 
 /**
